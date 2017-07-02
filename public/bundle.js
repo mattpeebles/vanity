@@ -21,8 +21,7 @@ $(() => {
 },{"./config":2}],2:[function(require,module,exports){
 (function (process,global){
 exports.DATABASE_URL = process.env.DATABASE_URL ||
-			   		   global.DATABASE_URL ||
-			   		   'mongodb://localhost/posts'
+			   		   global.DATABASE_URL
 
 exports.PORT = process.env.PORT || 8080;
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
