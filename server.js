@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
 
 const {PORT, DATABASE_URL} = require('./config')
+console.log(DATABASE_URL)
 
 const posts = require('./blog-api')
 
