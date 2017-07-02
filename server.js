@@ -7,9 +7,20 @@ mongoose.Promise = global.Promise;
 
 const {PORT, DATABASE_URL} = require('./config')
 
+const posts = require('./blog-api')
+
 app.use(morgan('common'))
 
 app.use(express.static('public'))
+app.use(express.static('resources'))
+app.use('/posts', posts)
+
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
+  next();
+});
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT){
 	return new Promise((resolve, reject) => {

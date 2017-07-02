@@ -1,17 +1,10 @@
 const mongoose = require('mongoose')
 
 const blogSchema = mongoose.Schema({
-	title: {type: String, required: true}
-	content: {type: String, required: true}
-	"hero-image": {type: String}
-	author: {
-		firstName: String,
-		lastName: String},
-	created: {tpe: Date, default: Date.now}
-})
-
-blogSchema.virtual('fullName').get(() => {
-	return `${this.author.firstName} ${this.author.lastName}`.trim()
+	title: {type: String, required: true},
+	content: {type: String, required: true},
+	author: {type: String, default: "Matt Peebles"},
+	created: {type: Date, default: Date.now}
 })
 
 blogSchema.methods.apiRepr = function() {
@@ -19,9 +12,8 @@ blogSchema.methods.apiRepr = function() {
 		id: this._id,
 		title: this.title,
 		content: this.content,
-		author: this.fullName,
+		author: this.author,
 		created: this.created,
-		"hero-image": this.hero-image
 	}
 }
 
