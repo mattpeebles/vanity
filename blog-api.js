@@ -7,14 +7,7 @@ const {Blog} = require('./blog-models')
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
-  next();
-});
-
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   Blog
   	.find() //makes call to database to find all posts
   	.exec() //executes the command
@@ -31,7 +24,7 @@ router.get('/', (req, res, next) => {
   		})
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', (req, res) => {
 	Blog
 		.findById(req.params.id)
 		.exec()
@@ -42,7 +35,7 @@ router.get('/:id', (req, res, next) => {
 		})
 })
 
-router.post('/', jsonParser, (req, res, next) => {
+router.post('/', jsonParser, (req, res) => {
 	const requiredFields = ['title', 'content'] //need to validate that post has required fields
 	requiredFields.forEach(field => {
 		if (!(field in req.body)){
@@ -68,7 +61,7 @@ router.post('/', jsonParser, (req, res, next) => {
 		})
 })
 
-router.put('/:id', jsonParser, (req, res, next) => {
+router.put('/:id', jsonParser, (req, res) => {
 	console.log(req.params.id)
 	console.log(req.body.id)
 	if (!(req.params.id && req.body.id === req.body.id)){
@@ -94,7 +87,7 @@ router.put('/:id', jsonParser, (req, res, next) => {
 		.catch(err => res.status(500).json({message: 'Intneral Server Error'}))
 })
 
-router.delete("/:id", (req, res, next) => {
+router.delete("/:id", (req, res) => {
 	Blog
 		.findByIdAndRemove(req.params.id)
 		.exec()

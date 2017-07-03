@@ -6,7 +6,6 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
 
 const {PORT, DATABASE_URL} = require('./config')
-console.log(DATABASE_URL)
 
 const posts = require('./blog-api')
 
@@ -14,14 +13,7 @@ app.use(morgan('common'))
 
 app.use(express.static('public'))
 app.use(express.static('resources'))
-app.use('/posts', posts)
-
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
-  next();
-});
+app.use('/api/posts', posts) //the forward slash in first arg is necessary, defines what the url is
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT){
 	return new Promise((resolve, reject) => {
@@ -58,8 +50,5 @@ function closeServer(){
 if (require.main === module) {
   runServer().catch(err => console.error(err));
 };
-
-
-
 
 module.exports = {app, runServer, closeServer}
