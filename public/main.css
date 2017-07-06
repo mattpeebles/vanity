@@ -4,6 +4,7 @@
 	.navbar{ /*Navbar parent div*/
 		font-family: 'Josefin Slab', serif;
 		font-weight: 400;
+		font-size: 18px;
 	}
 
 		
@@ -47,6 +48,39 @@
 /*******************************************/
 
 
+/*summary*/
+/*******************************************/
+	body{
+		background-color: #F9F9F5;
+		height: 100vh;
+	}
+
+	#summary{
+		margin-top: 4%;
+		width: 65%;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-size: 18px;
+	}
+
+	#tagline{
+		margin-top: 4%;
+		margin-left: 2%;
+		width: 35%;
+		border-bottom: 1px solid black;
+		font-family: 'Josefin Slab', serif;
+		font-style: italic;
+		font-weight: 300;
+	}
+
+	.highlight{
+		color: #FFC0ED;
+	}
+/*******************************************/
+
 @media screen and (min-width: 768px){
 
 	/*navbar styling*/
@@ -54,6 +88,7 @@
 	
 	.navbar{ /*Navbar parent div*/
 		width: 100%;
+		margin-bottom: 0;
 	}
 
 		

@@ -14,52 +14,44 @@
 		<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+	<!-- google fonts -->
+
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300i,400, 600|Open+Sans+Condensed:300,300i" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="./main.css">
+	<link rel="stylesheet" type="text/css" href="./blog-style.css">
 
 </head>
-<body>
+<body id="bootstrap-overrides">
 
 	<nav class="navbar navbar-default">
 		<div id="navbarContainer" class="container-fluid">
 		    <div class="navbar-header">
 		      <ul id="navList" class="nav navbar-nav">
-	            <li><a class="navbarElement" href="#" id="homePage">Matt Peebles</a></li>
-	            <li><a class="navbarElement" href="./blog/blog-index.html">Blog</a></li>
-				<li><a class="navbarElement" href="./projects/projects-index.html">Projects</a></li>		
-				<li><a class="navbarElement" href="./contact/contact-index.html">Contact</a></li>		        		                
+	            <li><a class="navbarElement" id='homePage' href="../index.html">Matt Peebles</a></li>
+	            <li><a class="navbarElement" id="blogPage" href="#">Blog</a></li>
+				<li><a class="navbarElement" href="../projects/projects-index.html">Projects</a></li>
+				<li><a class="navbarElement" href="../contact/contact-index.html">Contact</a></li>		        		        
 		      </ul>
 		    </div>
 		</div>
 	</nav>
 
-	<section id="summarySection">
-		<div id="tagline">
-			<h1>I made this for you.</h1>
-		</div>
-		<div id="summary">
-			<p>I'm a junior developer with a passion for creating software and websites that are <br>
-			<span class="highlight">beautiful</span>, informative, and easy to use. </p>
-			<br>
-			<p>I seek to be challenged and to learn. I strive to code in a <span class="highlight">concise</span> and maintainable manner. <br>
-			I'm comfortable doing so with <br>
-			HTML, CSS, <span class="highlight">Javascript</span>, jQuery, node.js, express, mongo, and mongoose.</p>
-			<br>
-			<p>An aesthetic life is a full life, so I spend my time with literature, <span class="highlight">philosophy</span>, music, art, and travel.<br>
-			I look to leave the world better than how I found it.</p>
-			<p>Call me Matt or call me <span class="highlight">Peebs</span>.</p>
+
+	<section>
+		<div class="container" id="blogPostSection">
 		</div>
 	</section>
 
 </body>
 
 	<!-- jquery -->
-	<script src="./resources/jquery.js"></script>
+	<script src="../resources/jquery.js"></script>
+
+	<script src='../resources/jquery-dateFormat.js'></script>
 
 	<!-- Bootstrap Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<!-- custom javascript -->
-	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="blog-app.js"></script>
 </html>

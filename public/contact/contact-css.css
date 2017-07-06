@@ -1,46 +1,9 @@
 body{
 	background-color: #F9F9F5;
-}
-
-.onePost {
-	margin-top: 5%;
-	width: 90%;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
 	height: 100vh;
 }
 
-.postTitle{
-	font-size: 25px;
-	width: 100%;
-	font-family: 'Josefin Slab', serif;
-	font-style: italic;
-	font-weight: 300;
-}
-
-.infoRow {
-	text-align: right;
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-weight: 300;
-	font-style: italic;
-}
-
-.postContent{
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-weight: 300;
-	font-size: 18px;
-	margin-top: 10%;
-}
-
-hr{
-	background-color: #b388eb;
-	border-color: #b388eb;
-	width: 65%;
-}
-
-
-/*Nav bar styling*/
+	/*Nav bar styling*/
 /*******************************************/
 		
 	.navbar{ /*Navbar parent div*/
@@ -78,14 +41,15 @@ hr{
 	}
 
 		
-	#blogPage{
-		color: #b388eb;
-	} 
-
-	#homePage{ /*targets li blog page to highlight current page*/
+	#homePage{
 		color: #FFC0ED;
 	}
 
+	#contactPage{ /*targets li blog page to highlight current page*/
+		color: #72ddf7;
+	}
+
+		
 
 	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
 		color: #FFC0ED;
@@ -94,9 +58,13 @@ hr{
 
 
 @media screen and (min-width: 768px){
+
+	/*navbar styling*/
+/*******************************************/
 	
 	.navbar{ /*Navbar parent div*/
 		width: 100%;
+		margin-bottom: 0;
 	}
 
 		
@@ -131,4 +99,7 @@ hr{
 	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
 	
 	}
+/*******************************************/
+
+
 }
