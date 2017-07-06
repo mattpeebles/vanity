@@ -10,8 +10,10 @@ function printPosts(data){
 	console.log(posts)
 
 	posts.forEach((post) => {
-		let formatDate = $.format.date(post.created, "dd/MM/yyyy")
+		let formatDate = $.format.date(post.created, "MMMM D, yyyy")
 		let prettyDate = $.format.prettyDate(post.created)
+
+		console.log(formatDate)
 
 		
 		//if date post was created 30 days past then use formatDate otherwise use a pretty date e.g. 2 hours ago
@@ -19,16 +21,17 @@ function printPosts(data){
 
 		console.log(date)
 
-		let blogTemplate = '<div class=\"row\">' +
+		let blogTemplate = '<div class=\"onePost row\">' +
 								'<div class=\"col-xs-12 post\">' +
 									'<div class=\"postTitle\">' + post.title + "</div>" +
-									'<div class=\"row\">' + 
-										'<div class=\"col-xs-6 postAuthor\">' + post.author + '</div>' +
-										'<div class=\"col-xs-6 postCreated\">' + date + '</div>' +
+									'<div class=\"infoRow row\">' + 
+										// '<div class=\"col-xs-6 postAuthor\">' + post.author + '</div>' +
+										'<div class=\"col-xs-6 col-xs-offset-6 postCreated\">' + date + '</div>' +
 									'</div>' +
 									'<div class=\"postContent\">' + post.content + '</div>' +
 								'</div>' +
-						   '</div>';
+						   '</div>'+
+						   '<hr class="breakLine">';
 		$("#blogPostSection").append(blogTemplate)
 	})
 }

@@ -1,5 +1,7 @@
 const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be changed once app is fully deployed
 
+const showdown = require('showdown')
+const converter = new showdown.Converter()
 
 	// GET posts from database
 //*************************************//
@@ -11,18 +13,17 @@ const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be ch
 		let posts = data.blogposts
 
 		posts.forEach((post) => {
-			let formatDate = $.format.date(post.created, "dd/MM/yyyy")
+			let formatDate = $.format.date(post.created, "MMM D, yyyy")
 			let prettyDate = $.format.prettyDate(post.created)
 
 			let date = ((Math.floor(post.created - Date.now) / (1000*60*60*24)) > 30) ? formatDate : prettyDate 
 
-			let blogTemplate = '<div class=\"row\">' +
+			let blogTemplate = '<div class=\"row onePost\">' +
 									'<div class=\"col-xs-12 post\">' +
 										'<div class=\"row\">' +
-											'<div class=\"btn-group btn-group-xs\" role=\"group\" aria-label=\"edit\">' +
-												'<button type=\"button\" class=\"edit btn btn-default\" id=\"' + post.id + '\">' + "Edit" + '</button>' +
-												'<button type=\"button\" class=\"delete btn btn-default\" id=\"' + post.id + '\">' + "Delete" + '</button>' +
-												'<button type=\"button\" class=\"btn btn-default\">' + "Right" + '</button>' +
+											'<div class=\"btn-group btn-group-sm editGroup\" role=\"group\" aria-label=\"edit\">' +
+												'<button type=\"button\" class=\"edit btn btn-default\" id=\"' + post.id + '\"><span class=\"glyphicon glyphicon-edit\" aria-hidden=\"true\"></span></button>' +
+												'<button type=\"button\" class=\"delete btn btn-default\" id=\"' + post.id + '\"><span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></button>' +
 											'</div>' +
 										'</div>' +
 										'<div class=\"postTitle\" contenteditable=\'false\'>' + post.title + "</div>" +
@@ -46,18 +47,19 @@ const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be ch
 	//POST new post
 //*************************************//
 	function createNewPostTemplate(){
-		const formTemplate = "<div class=\'row\'>" +
+		const formTemplate = "<div class=\'row\' id=\"newPostSection\">" +
 								"<div class=\'col-xs-12\'>" +
-									"<form id=\"newPostForm\">" +
-										"<label>Title<input type=\"text\" name=\"newPostTitle\" id=\'title\'>" +
-										"<label>Content<input type=\"text\" name=\"newPostContent\" id= \'content\'>" +
+									"<label id=\"newPostFormTitle\">New Post</label><form id=\"newPostForm\">" +
+										"<label>Title</label><input type=\"text\" name=\"newPostTitle\" id=\'title\'>" +
+										"<label id=\"contentDiv\">Content</label><textarea name=\"content\" id=\"content\" form=\"newPostForm\"></textarea>" +
 										"<input type=\'submit\' value=\'Submit\' id=\"newPostSubmit\">" +
 									"</form>" +
 								"</div>" +
-						 	 "</div>"
+						 	 "</div>";
 
 
 		$('#newPost').on('click', ()=> {
+			$('#blogPostEditSection').empty()
 			$('#blogPostEditSection').prepend(formTemplate)
 		})
 
@@ -67,10 +69,9 @@ const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be ch
 	function postNewPostToDatabase(){
 		$('#blogPostEditSection').on('click', '#newPostSubmit', (event) => {
 			event.preventDefault()
-			console.log('i tried')
 			let data = {
-						"title": $('#title').val(), 
-						"content": $('#content').val(),
+						"title": converter.makeHtml($('#title').val()), 
+						"content": converter.makeHtml($('#content').val()),
 						"created": Date.now()
 						};
 
@@ -102,6 +103,7 @@ const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be ch
 			let parentDiv = $(this).parent().parent().parent()
 			$(parentDiv).children('.postTitle').attr('contenteditable', true)
 			$(parentDiv).children('.postContent').attr('contenteditable', true)
+			$(parentDiv).children('.postContent').focus()
 			$(parentDiv).append("<div id=\'buttonDiv\'><button class=\'btn btn-default\' id=\'editSubmit'>Submit</button></div>")
 			putDataToDatabase(postID)
 		})
@@ -109,16 +111,16 @@ const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be ch
 
 	function putDataToDatabase(id){
 		$('#blogPostEditSection').on('click', '#editSubmit', () => {
-			
 
 			let parentDiv = $("#editSubmit").parent()
+			let selectedTitle = $(parentDiv).siblings('.postTitle').text()
 			$(parentDiv).siblings('.postTitle').attr('contenteditable', false)
 			$(parentDiv).siblings('.postContent').attr('contenteditable', false)
 			
 			let editedTitle = $(parentDiv).siblings('.postTitle').text()
 			let editedContent = $(parentDiv).siblings('.postContent').text()
 
-			let putJSON = JSON.stringify({'title': editedTitle, 'content': editedContent, 'created': Date.now()}) 
+			let putJSON = JSON.stringify({'title': converter.makeHtml(editedTitle), 'content': converter.makeHtml(editedContent), 'created': Date.now()}) 
 
 			let putURL = DATABASE_URL + '/' + id
 
@@ -127,7 +129,7 @@ const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be ch
 				type: 'PUT',
 				data: putJSON,
 				contentType: 'application/json',
-				success: (data) => alert('Load was performed.')
+				success: (data) => alert(`Updated ${selectedTitle}.`)
 			})
 
 			$(parentDiv).remove()
@@ -143,19 +145,22 @@ const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be ch
 	function deleteDataFromDatabase(){
 		$('#blogPostEditSection').on('click', '.delete', function(){
 			let postID = this.id;
-			if (confirm(`Are you sure you want to delete post ${postID}?`) == true){
+			let parentDiv = $(this).parent().parent().parent()
+			let selectedTitle = $(parentDiv).children('.postTitle').text()
+
+			if (confirm(`Are you sure you want to delete post ${selectedTitle}?`) == true){
 				let deleteURL = DATABASE_URL + '/' + postID
 				$.ajax({
 				    type: "DELETE",
 				    url: deleteURL,
 				    success: function(msg){
-				        alert(`Deleted post ${postID}`);
+				        alert(`Deleted post ${selectedTitle}`);
 				    }
 				});
 				location.reload()
 			}
 			else{
-				alert(`Did not delete post ${postID}`)
+				alert(`Did not delete post ${selectedTitle}`)
 			}
 		})
 	}
