@@ -40,22 +40,73 @@ body{
 		width: 20%;
 	}
 
-		
-	#homePage{
-		color: #FFC0ED;
-	}
+	
 
 	#contactPage{ /*targets li blog page to highlight current page*/
-		color: #72ddf7;
+		color: #a7e5e3;
 	}
 
 		
 
 	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
-		color: #FFC0ED;
+		color: #dad2d8;
 	}
 /*******************************************/
 
+
+/* Centre the form within the page */
+form {
+    margin:0 auto;
+    width:460px;
+}
+
+label {
+    display:block;
+    margin-top:20px;
+    letter-spacing:2px;
+}
+
+/* Style the text boxes */
+input, textarea {
+    width:439px;
+    height:27px;
+    background:#efefef;
+    border:1px solid #dedede;
+    padding:10px;
+    margin-top:3px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+textarea {
+	height:213px;
+}
+
+input:focus, textarea:focus {
+    border:.5px solid #97d6eb;
+}
+
+#submit {
+    border:none;
+    height: 50px;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+#submit:hover {
+	    opacity:.9;
+}
+
+.header {
+	width: 460px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/**/
 
 @media screen and (min-width: 768px){
 

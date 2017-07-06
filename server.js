@@ -1,19 +1,25 @@
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
-
 const mongoose = require('mongoose')
+
 mongoose.Promise = global.Promise;
 
 const {PORT, DATABASE_URL} = require('./config')
 
 const posts = require('./blog-api')
 
+const {userRouter} = require('./users/users-router')
+
+app.use('/users/', userRouter)
+
 app.use(morgan('common'))
 
 app.use(express.static('public'))
-app.use(express.static('resources'))
+
 app.use('/api/posts', posts) //the forward slash in first arg is necessary, defines what the url is
+
+let server;
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT){
 	return new Promise((resolve, reject) => {

@@ -40,19 +40,16 @@ body{
 		width: 20%;
 	}
 
-		
-	#homePage{
-		color: #FFC0ED;
-	}
+	
 
 	#projectsPage{ /*targets li blog page to highlight current page*/
-		color: #8093f1;
+		color: #a7e5e3;
 	}
 
 		
 
 	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
-		color: #FFC0ED;
+		color: #dad2d8;
 	}
 /*******************************************/
 

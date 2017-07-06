@@ -1,3 +1,5 @@
+/*saving this color FFC0ED*/
+
 body{
 	background-color: #F9F9F5;
 }
@@ -34,8 +36,8 @@ body{
 }
 
 hr{
-	background-color: #b388eb;
-	border-color: #b388eb;
+	background-color: #a7e5e3;
+	border-color: #a7e5e3;
 	width: 65%;
 }
 
@@ -79,16 +81,12 @@ hr{
 
 		
 	#blogPage{
-		color: #b388eb;
+		color: #a7e5e3;
 	} 
-
-	#homePage{ /*targets li blog page to highlight current page*/
-		color: #FFC0ED;
-	}
 
 
 	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
-		color: #FFC0ED;
+		color: #dad2d8;
 	}
 /*******************************************/
 

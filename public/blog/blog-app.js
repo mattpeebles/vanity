@@ -32,7 +32,7 @@ function printPosts(data){
 								'</div>' +
 						   '</div>'+
 						   '<hr class="breakLine">';
-		$("#blogPostSection").append(blogTemplate)
+		$("#blogPostSection").prepend(blogTemplate)
 	})
 }
 
