@@ -2929,7 +2929,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
 
 },{}],2:[function(require,module,exports){
-const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be changed once app is fully deployed
+const DATABASE_URL = "https://vanity-cathedral.herokuapp.com/api/posts" //this will need to be changed once app is fully deployed
 
 const showdown = require('showdown')
 const converter = new showdown.Converter()
