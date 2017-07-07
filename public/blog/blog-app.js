@@ -1,4 +1,4 @@
-const DATABASE_URL = "http://localhost:8080/api/posts" //this will need to be changed once app is fully deployed
+const DATABASE_URL = "https://vanity-cathedral.herokuapp.com/api/posts" //this will need to be changed once app is fully deployed
 
 function getDataFromDatabase(callback){
 	$.getJSON(DATABASE_URL, callback)
