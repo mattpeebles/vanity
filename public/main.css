@@ -73,7 +73,7 @@
 	#tagline{
 		margin-top: 4%;
 		margin-left: 2%;
-		width: 35%;
+		width: 85%;
 		border-bottom: 1px solid black;
 		font-family: 'Josefin Slab', serif;
 		font-style: italic;
@@ -118,8 +118,8 @@
 	}
 
 		
-	#blogPage{ /*targets li blog page to highlight current page*/
-
+	#tagline{ 
+		width: 45%;
 	}
 
 		
