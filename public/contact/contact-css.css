@@ -43,7 +43,7 @@ body{
 	
 
 	#contactPage{ /*targets li blog page to highlight current page*/
-		color: #a7e5e3;
+		color: #98D1CF;
 	}
 
 		
@@ -54,59 +54,37 @@ body{
 /*******************************************/
 
 
-/* Centre the form within the page */
-form {
-    margin:0 auto;
-    width:460px;
-}
+	/*Body styling*/
 
-label {
-    display:block;
-    margin-top:20px;
-    letter-spacing:2px;
-}
+	#tagline{
+		margin-top: 4%;
+		margin-left: 2%;
+		width: 35%;
+		border-bottom: 1px solid black;
+		font-family: 'Josefin Slab', serif;
+		font-style: italic;
+		font-weight: 300;
+	}
 
-/* Style the text boxes */
-input, textarea {
-    width:439px;
-    height:27px;
-    background:#efefef;
-    border:1px solid #dedede;
-    padding:10px;
-    margin-top:3px;
-    font-size:0.9em;
-    color:#3a3a3a;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border-radius:5px;
-}
+	#contactInfo{
+		margin-top: 4%;
+		width: 65%;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-size: 18px;
+	}
 
-textarea {
-	height:213px;
-}
+	.highlight{
+		color: #98D1CF;
+	}
 
-input:focus, textarea:focus {
-    border:.5px solid #97d6eb;
-}
-
-#submit {
-    border:none;
-    height: 50px;
-    margin-top:20px;
-    cursor:pointer;
-}
-
-#submit:hover {
-	    opacity:.9;
-}
-
-.header {
-	width: 460px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-/**/
+	.highlight:hover{
+		color: #98D1CF;
+		text-decoration: underline; 
+	}
 
 @media screen and (min-width: 768px){
 
