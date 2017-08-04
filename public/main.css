@@ -1,4 +1,31 @@
-/*Nav bar styling*/
+body{
+	background-color: #F9F9F5;
+	height: 100vh;
+}
+
+
+	#heroHeader{
+		height: 60vh;
+		background: lightgrey;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center; 
+	}
+
+	#centeredRow{
+		max-width: 75%;
+	}
+
+	#heroFill{
+		font-size: 48px;
+		border: 10px solid black;
+		padding: 15px;
+		width: auto;
+	}
+
+
+	/*Nav bar styling*/
 /*******************************************/
 		
 	.navbar{ /*Navbar parent div*/
@@ -54,11 +81,6 @@
 
 /*summary*/
 /*******************************************/
-	body{
-		background-color: #F9F9F5;
-		height: 100vh;
-	}
-
 	#summary{
 		margin-top: 4%;
 		width: 65%;
@@ -83,7 +105,74 @@
 	.highlight{
 		color: #f97a80;
 	}
+
+
+	#image{
+		margin-top: 8%;
+		border: 1px solid black;
+		border-radius: 100%;
+		height: 300px;
+	}
 /*******************************************/
+
+	#projectsTitleDiv{
+		margin-top: 5%;
+		text-align: center;
+		border: 1px solid black;
+		padding: 2%;
+	}
+
+	.project{
+		height: 30vh;
+		border: 1px solid black;
+		text-align: center;
+	}
+
+
+/*******************************************/
+
+	#contactSection{
+		border: 1px solid black;
+	}
+
+	#contactTitle{
+		text-align: center;
+	}
+
+	#contactInfo{
+		position: relative;
+		width: 45%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#socialIconsSection{
+		width: 45%;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#socialIcons{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 15%;
+		margin-top: 15%;
+	}
+
+	#socialIcons > div{
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+
+	#socialIcons > div > a > img {
+		height: 36px;
+		width: auto;
+	}
+
 
 @media screen and (min-width: 768px){
 

@@ -21,6 +21,14 @@
 </head>
 <body>
 
+	<header class='container-fluid' id="heroHeader">
+		<div class="row" id="centeredRow">
+			<div class="col-sm-12" id="middle">
+				<h1 id="heroFill">Matt Peebles</h1>
+			</div>
+		</div>
+	</header>
+
 	<nav class="navbar navbar-default">
 		<div id="navbarContainer" class="container-fluid">
 		    <div class="navbar-header">
@@ -34,28 +42,97 @@
 		</div>
 	</nav>
 
-	<section id="summarySection">
-		<div id="tagline">
-			<h1>Let me introduce myself.</h1>
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-md-8">
+				<div id="summary">
+					<p>I am a developer with a passion for creating software and websites that are <br>
+					<span class="highlight">beautiful</span>, informative, and easy to use. </p>
+					<br>
+					<p>I seek to be challenged and to learn. I strive to code in a <span class="highlight">concise</span> and maintainable manner. <br>
+					I am comfortable doing so with <br>
+					HTML, CSS, <span class="highlight">Javascript</span>, jQuery, node.js, express, mongo, and mongoose.</p>
+					<p>An aesthetic life is a full life, so I spend my time with literature, <span class="highlight">philosophy</span>, music, art, and travel.<br>
+					I look to leave the world better than how I found it.</p>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-4">
+				<div id="image">
+					<div id="filler"></div>
+				</div>
+			</div>
 		</div>
-		<div id="summary">
-			<p>I am a developer with a passion for creating software and websites that are <br>
-			<span class="highlight">beautiful</span>, informative, and easy to use. </p>
-			<br>
-			<p>I seek to be challenged and to learn. I strive to code in a <span class="highlight">concise</span> and maintainable manner. <br>
-			I am comfortable doing so with <br>
-			HTML, CSS, <span class="highlight">Javascript</span>, jQuery, node.js, express, mongo, and mongoose.</p>
-			<br>
-			<p>An aesthetic life is a full life, so I spend my time with literature, <span class="highlight">philosophy</span>, music, art, and travel.<br>
-			I look to leave the world better than how I found it.</p>
-			<p>Call me Matt or call me <span class="highlight">Peebs</span>.</p>
-		</div>
-	</section>
+
+
+		<section id="projectsSection">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="projectsTitleDiv">
+						<h2>Projects</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<section class="project" id="wandery">
+						<div class="title">
+							<h2>Wandery</h2>
+						</div>
+						<article class="summary">
+							<p>A roadtrip single page webapp designed to make it easier to plan roadtrips using Google Maps and Eventbrite.</p>
+							<p>Add screenshots or better image, stack details, and a longer summary</p>
+
+						</article>
+					</section>
+				</div>
+			</div>
+			<section id="projects" class="row">
+				<div class="col-sm-12">	
+					<section class="project" id="tabby">
+						<div class="title">
+							<h2>Tabby</h2>
+						</div>
+						<article class="summary">
+							<p>A full stack webapp to store links that are deleted after a set time depending on user set priority.</p>
+							<p>Add screenshots, stack details, and a longer summary</p>
+						</article>
+					</section>
+				</div> 
+			</section> <!-- end of tabby section -->
+		</section> <!-- end of projects section -->
+
+		<section id="contactSection">
+			<div class="row">
+				<div class="col-sm-12" id="contactTitle">
+					<h2>Contact Me!</h2>
+				</div>
+				<div class="col-sm-12">
+					<div id="contactInfo">
+							<p>I love to read messages and letters from others. Please feel to <span><a class="highlight" href="mailto:peebles.mm@gmail.com?subject=Hello.">write</a></span> and say hello.</p>
+
+							<p>If you prefer to learn more about me first, I understand. I also exist on <span><a class="highlight" href="https://linkedin.com/in/mmpeebles">linkedin</a></span> and <span><a class="highlight" href="https://github.com/mattpeebles">github</a></span>.</p>
+
+							<p>I am also happy to furnish my resume to those who ask.</p>
+						</div>
+						<div class="col-sm-12" id="socialIconsSection">
+							<div class="row" id="socialIcons">
+								<div class="col-xs-6">
+									<a href="https://github.com/mattpeebles"><img src="/resources/images/github.png"></a>
+								</div>
+								<div class="col-xs-6">
+									<a href="https://linkedin.com/in/mmpeebles"><img src="/resources/images/linkedin.png"></a>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</section>
 
 </body>
 
 	<!-- jquery -->
-	<script src="./resources/jquery.js"></script>
+	<script src="/resources/jquery.js"></script>
 
 	<!-- Bootstrap Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
