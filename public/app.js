@@ -10,9 +10,23 @@ var stickyNav = function(){
 	}
 };
 
+function applyScrollSpy(){
+	$('.navbar').on('activate.bs.scrollspy', function() {
+		console.log('hi')
+		window.location.hash = $('.nav .active a').attr('href').replace('#', '#/');
+	});
+}
+
 $(() => {
+	$('body').scrollspy({target: ".navbar"})
+	$('.navbar').on('activate.bs.scrollspy', function() {
+		console.log('hi')
+		window.location.hash = $('.nav .active a').attr('href').replace('#', '#/');
+	});
 	stickyNav()
+	applyScrollSpy()
 	$(window).scroll(() => {
 		stickyNav()
+		applyScrollSpy()
 	})
 })

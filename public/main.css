@@ -25,6 +25,11 @@ body{
 		width: auto;
 	}
 
+.desktopShow{
+	display: none;
+}
+
+
 	/*Nav bar styling*/
 /*******************************************/
 
@@ -39,9 +44,18 @@ body{
 
 /*summary*/
 /*******************************************/
+	#summarySection{
+		padding: 3.5em 0;
+	}
+
+	#summarySection h3{
+		text-align: center;
+		font-size: 30px;
+		padding: 1em 0 0 0;
+	}
+
 	#summary{
 		margin-top: 4%;
-		width: 65%;
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
@@ -78,18 +92,57 @@ body{
 		border-radius: 100%;
 
 	}
+
+	#skillsSection h3{
+		font-size: 30px;
+		padding-top: 2.5em 0;
+		text-align: center;
+	}
+
+	#skillsList h4{
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.skillIcon{
+		height: 125px;
+	}
+
+	.half{
+		width: 50%;
+	}
+
+
+	#skillsList ul{
+		list-style: none;
+		text-align: center;
+	}
 /*******************************************/
+
+
+
 
 	/*Projects Section*/
 /*******************************************/
-	.projectsSection{
-		padding: 3.5em 0;
+	#projectsSection{
+		padding-top: 3.5em;
+		background-color: #fff;
 	}
 
-	#projectsTitleDiv{
-		text-align: center;
-		background-color: #fff;
-		height: 30vh;
+	.projectsIcon{
+		height: 150px;
+	}
+
+	#projectsHeader{
+		text-align: center
+	}
+
+	#projectsHeader h3{
+		padding: .5em 0;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		font-size: 40px;
+
 	}
 
 	.projectContainer{
@@ -164,7 +217,7 @@ body{
 		text-align: center;
 	}
 	
-	 .projectLive > a, .projectCode > a{
+	 .my-btn{
 	    font-size: .8em;
 	    text-align: center;
 	    display: block;
@@ -182,7 +235,7 @@ body{
 	    text-transform: uppercase;
 	}
 
-	.projectLive > a, .projectCode > a {
+	.my-btn {
 		color: #fff;
 		padding-left: 2em;
 		padding-right: 2em;
@@ -196,8 +249,21 @@ body{
 	}
 /*******************************************/
 
+	/*Contact*/
+/*******************************************/
+
 	#contactSection{
-		border: 1px solid black;
+		height: 92vh;
+		padding: 5em 0;
+		text-align: center;
+		padding-bottom: 200px;
+	}
+
+	#contactSection .my-btn{
+		width: 65%;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	#contactTitle{
@@ -206,12 +272,34 @@ body{
 
 	#contactInfo{
 		position: relative;
-		width: 45%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	#socialIconsSection{
+	#contactInfo{
+		list-style: none;
+	}
+
+	#contactInfo a {
+		display: block;
+		line-height: 32px;
+		margin-bottom: 20px;
+		text-align: left;
+	}
+
+	.contactIcon{
+		height: 36px;
+		color: #333;
+		width: auto;
+		font-size: 36px;
+		float: left;
+		margin-right: 20px;
+	}
+
+	#linkedIn{
+		margin-right: 10px;
+	}
+/*	#socialIconsSection{
 		width: 45%;
 		position: relative;
 		margin-left: auto;
@@ -236,14 +324,26 @@ body{
 	#socialIcons > div > a > img {
 		height: 36px;
 		width: auto;
-	}
+	}*/
+/*******************************************/
+
 
 
 @media screen and (min-width: 768px){
+	
+.mobileShow{
+	display: none;
+}
+
+.desktopShow{
+	display: initial;
+}
+
+
 	/*Projects Section*/
 /*******************************************/
 	.projectContainer{
-		min-height: 100vh;
+		min-height: auto;
 		text-align: center;
 		padding: 5%;
 		color: white;
@@ -257,7 +357,7 @@ body{
 	}
 
 	.projectHighlight > img {
-		max-width: 30%;
+		width: 400px;
 		height: auto;
 	}
 
@@ -269,6 +369,12 @@ body{
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	#contactSection{
+		height: 92vh;
+		padding: 10em 0;
+		width: 50%;
 	}
 
 /*******************************************/
