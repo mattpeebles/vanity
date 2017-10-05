@@ -15,8 +15,7 @@ function smoothScroll(){
 	{
 		e.preventDefault();
 		
-		if( $( $.attr(this, 'href') ).length > 0 )
-		{
+		if( $( $.attr(this, 'href') ).length > 0 ){
 			$('html, body').animate(
 			{
 				scrollTop: $( $.attr(this, 'href') ).offset().top
@@ -26,10 +25,21 @@ function smoothScroll(){
 	});
 }
 
+function highlight(){
+	if($('#summaryNav').hasClass('active')){
+		$('#navHeader').addClass('highlight')
+	}
+	else{
+		$('#navHeader').removeClass('highlight')
+	}
+}
+
 $(() => {
 	stickyNav()
 	smoothScroll()
+	highlight()
 	$(window).scroll(() => {
 		stickyNav()
+		highlight()
 	})
 })

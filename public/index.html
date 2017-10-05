@@ -8,16 +8,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Matt Peebles</title>
 
+	<link rel="shortcut icon" href="/resources/images/hero-image.png" type="image/x-icon">
+
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web" rel="stylesheet">
-
-	<link rel="stylesheet" type="text/css" href="/resources/jqueryUI/jquery-ui.css">
-
-	<link rel="stylesheet" type="text/css" href="/resources/jqueryUI/jquery-ui.structure.css">
-
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -40,21 +37,24 @@
 
 
 	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#summarySection">Matt Peebles</a>
+	  <a id="navHeader" class="navbar-brand" href="#summarySection">Matt Peebles</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item col-auto">
-	        <a class="nav-link" href="./blog/blog-index.html">Blog</a>
+	    <ul id="navList" class="navbar-nav mr-auto">
+	      <li class="nav-item col-auto  sr-only">
+	      	 <a id="summaryNav" class="nav-link" href="#summarySection">Summary</a>
 	      </li>
 	      <li class="nav-item col-auto">
-	        <a class="nav-link" href="#projects">Projects</a>
+	        <a id="projectNav" class="nav-link" href="#projects">Projects</a>
 	      </li>
 	      <li class="nav-item col-auto">
-	        <a class="nav-link" href="#contactSection">Contact</a>
+	        <a id="contactNav" class="nav-link" href="#contactSection">Contact</a>
+	      </li>
+	      <li class="nav-item col-auto">
+	        <a class="nav-link" href="./blog/blog-index.html">Thoughts</a>
 	      </li>
 	    </ul>
 	  </div>
@@ -63,7 +63,7 @@
 	<section class="container" id="summarySection">
 		<div class="row">
 			<div class="col-sm-12">
-				<h3>Full Stack Javascript Developer</h3>
+				<h2>Full Stack Javascript Developer</h2>
 				<hr>
 			</div>
 			<div class="col-sm-12 col-md-7">
@@ -90,17 +90,16 @@
 							<img src="/resources/images/html-icon.svg" class="skillIcon">
 						</div>
 						<ul class="half col-sm-6">
-							<li>Javascript/ES6</li>
-							<li>React/Redux</li>
-							<li>HTML5</li>
-							<li>CSS3</li>
+							<li>Javascript / ES6</li>
+							<li>React / Redux</li>
+							<li>HTML5 / CSS3</li>
 							<li>jQuery</li>
 							<li>Bootstrap 3 / 4</li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-sm-12 col-lg-4" id="backendSection">
-					<h4>Backend End</h4>
+					<h4>Back End</h4>
 					<div class="row">
 						<div class="half col-sm-6">
 							<img src="/resources/images/home-icon.svg" class="skillIcon">
@@ -137,7 +136,7 @@
 	<section id="projectsSection">
 		<div class="col-sm-12" id="projectsHeader">	
 			<img src="/resources/images/mix-tape-icon.svg" class="projectsIcon">	
-			<h3>Projects</h3>
+			<h2>Projects</h2>
 			<p>Check out what I've been up to.</p>
 		</div>
 		<div class="projectContainer container-fluid">
@@ -149,8 +148,8 @@
 				</div>
 				<div class="projectDetails col-sm-6">
 					<div class="col-sm-12 projectTitle"> 
-						<h2>Wandery</h2>
-						<h3>Front End Web App</h3>
+						<h3>Wandery</h3>
+						<h4>Front End Web App</h4>
 					</div>
 					<div class="col-sm-12 projectSummary">
 						 <p>A frontend webapp designed to make it easier to plan roadtrips using Google Maps and Eventbrite. Developed my basic front-end skills along with API requests and responses</p>	
@@ -159,10 +158,10 @@
 						<p>Javascript : jQuery : HTML5 : CSS3 : Bootstrap</p>
 					</div>
 					<p class="projectLive">
-						<a class='my-btn' href='https://mattpeebles.github.io/wandery/' target="_blank">View</a>
+						<a href='https://mattpeebles.github.io/wandery/' target="_blank"><button class="my-btn btn btn-default">View</button></a>
 					</p>
 						<p class="projectCode">
-						<a class="my-btn" href='https://github.com/mattpeebles/wandery' target="_blank">Source Code</a>
+						<a href='https://github.com/mattpeebles/wandery' target="_blank"><button class="my-btn btn btn-default">Source Code</button></a>
 					</p>
 				</div>
 			</div>
@@ -177,8 +176,8 @@
 				</div>
 				<div class="projectDetails col-sm-6">
 					<div class="col-sm-12 projectTitle"> 
-						<h2>Tabby</h2>
-						<h3>Web App / Backend</h3>
+						<h3>Tabby</h3>
+						<h4>Web App / Backend</h4>
 					</div>
 					<div class="col-sm-12 projectSummary">
 						<p>A full stack webapp to store links that are deleted after a set time depending on user set priority, backed by a custom built API. Developed my ability to build API's, create ODMs, and inteweave the front-end and back-end into a cohesive whole.</p>
@@ -187,10 +186,10 @@
 						<p>ES6 : HTML5 : CSS3 : MongoDB : Mocha/Chai : Bootstrap 3</p>
 					</div>
 					<p class="projectLive">
-						<a class='my-btn' href='https://minimal-tabby.herokuapp.com/' target="_blank">View</a>
+						<a href='https://minimal-tabby.herokuapp.com/' target="_blank"><button class="my-btn btn btn-default">View</button></a>
 					</p>
 					<p class="projectCode">
-						<a class="my-btn" href='https://github.com/mattpeebles/tabby' target="_blank">Source Code</a>
+						<a href='https://github.com/mattpeebles/tabby' target="_blank"><button class="my-btn btn btn-default">Source Code</button></a>
 					</p>
 				</div>
 				<div class="col-sm-6 projectShow desktopShow">
@@ -210,8 +209,8 @@
 				</div>
 				<div class="projectDetails col-sm-6">
 					<div class="col-sm-12 projectTitle"> 
-						<h2>Book Commons</h2>
-						<h3>Fullstack React SPA</h3>
+						<h3>Book Commons</h3>
+						<h4>Fullstack React SPA</h4>
 					</div>
 					<div class="col-sm-12 projectSummary">
 						<p>A fullstack react single page app that aggregates a variety of public domain ebook resources into one convenient place. Allows registered users to save ebooks with a wishlist feature.</p><!-- 
@@ -221,7 +220,7 @@
 						<p>React : Redux: ES6 : HTML5 : CSS3 : MongoDB : Mocha/Chai : Bootstrap 4</p>
 					</div>
 					<p class="projectLive">
-						<a class='my-btn' href='https://book-commons.netlify.com/' target="_blank">View</a>
+						<a href='https://book-commons.netlify.com/' target="_blank"><button class="my-btn btn btn-default">View</button></a>
 					</p>
 					<p class="projectCode row">
 						<a class="my-btn col-md-5" href='https://github.com/mattpeebles/book-commons-client' target="_blank">Client Code</a>
@@ -233,7 +232,7 @@
 	</section> <!-- end of projects section -->
 
 	<section id="contactSection" class="container">
-			<h3>Contact</h3>
+			<h2>Contact</h2>
 			<p id="byline">I love to read messages and letters from others. Please feel to <span class="highlight">write</span> and say hello.</p>
 			<hr>
 			<div class="col-sm-12">
