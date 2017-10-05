@@ -345,11 +345,17 @@ h2{
 	#contactInfo a:hover{
 		color: #f97a80;
 		transition: color .33s ease-out;
+		fill: currentColor;
 	}
 
 	#contactInfo a:hover > i{
 		color: #f97a80;
 		transition: color .33s ease-out;
+	}
+
+	#contactInfo a:hover svg{
+		fill: #f97a80;
+		transition: fill .33s ease-out;
 	}
 
 
@@ -371,10 +377,6 @@ h2{
 		font-size: 36px;
 		float: left;
 		margin-right: 20px;
-	}
-
-	#linkedIn{
-		margin-right: 10px;
 	}
 
 	#contactSection > p{
