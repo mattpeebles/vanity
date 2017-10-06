@@ -1,6 +1,4 @@
-const DATABASE_URL = window.location.origin //change to http://localhost:8080/api/posts when testing locally
-																		// change to "https://vanity-cathedral.herokuapp.com/api/posts" when deploying to heroku
-																		// also make this change in blog-editor-app.js and browserify it
+const DATABASE_URL = window.location.origin
 function getDataFromDatabase(callback){
 	$.getJSON(DATABASE_URL + '/api/posts', callback)
 }
