@@ -25,9 +25,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(express.static('public'))
-app.use('/resources', express.static('resources'))
-
 app.use('/api/posts', posts) //the forward slash in first arg is necessary, defines what the url is
 
 let server;
