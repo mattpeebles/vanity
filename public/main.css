@@ -302,7 +302,7 @@ h2{
 	}
 
 	#bookcommons .projectCode > a{
-		width: 40%;
+		width: 45%;
 	}
 /*******************************************/
 
@@ -333,6 +333,7 @@ h2{
 	}
 
 	#contactInfo{
+		list-style: none;
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
@@ -340,6 +341,10 @@ h2{
 
 	#contactInfo a {
 		color: #333;
+		display: block;
+		line-height: 32px;
+		margin-bottom: 20px;
+		text-align: left;
 	}
 
 	#contactInfo a:hover{
@@ -358,18 +363,6 @@ h2{
 		transition: fill .33s ease-out;
 	}
 
-
-	#contactInfo{
-		list-style: none;
-	}
-
-	#contactInfo a {
-		display: block;
-		line-height: 32px;
-		margin-bottom: 20px;
-		text-align: left;
-	}
-
 	.contactIcon{
 		height: 36px;
 		color: #333;
@@ -384,7 +377,18 @@ h2{
 	}
 /*******************************************/
 
+@media screen and (max-width: 320px){
+	#contactSection{
+		height: 92vh;
+		padding: 5em .5em;
+		text-align: center;
+		padding-bottom: 200px;
+	}
 
+	#contactInfo{
+		font-size: 15px;
+	}
+}
 
 @media screen and (min-width: 768px){
 
@@ -463,6 +467,10 @@ h2{
 		height: 92vh;
 		padding: 5em 0;
 		width: 50%;
+	}
+
+	#contactInfo{
+		font-size: initial;
 	}
 
 /*******************************************/

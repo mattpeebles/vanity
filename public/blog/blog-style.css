@@ -54,7 +54,7 @@ h2{
 }
 
 i.viewMore, i.viewLess{
-	font-size: 45px;
+	font-size: 9vw;
 /*	position: absolute;
 	top: 0;
 	right: 0;*/
@@ -84,7 +84,7 @@ i.viewMore:hover, i.viewLess:hover{
 }
 
 .postTitle{
-	font-size: 25px;
+	font-size: 6vw;
 	width: 100%;
 	font-weight: 300;
 }
@@ -234,4 +234,18 @@ pre {
 	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
 	
 	}
+
+	.postTitle{
+		font-size: 25px;
+		width: 100%;
+		font-weight: 300;
+	}
+
+
+	i.viewMore, i.viewLess{
+	font-size: 45px;
+/*	position: absolute;
+	top: 0;
+	right: 0;*/
+}
 }

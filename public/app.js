@@ -1,6 +1,6 @@
 var sticky = $('.navbar').offset().top;
 
-var stickyNav = function(){
+function stickyNav(){
 	var scrollTop = $(window).scrollTop();
 	     
 	if (scrollTop > sticky) { 
@@ -9,6 +9,14 @@ var stickyNav = function(){
 	    $('.navbar').removeClass('sticky'); 
 	}
 };
+
+function navBarHide(){
+	let navMain = $(".navbar-collapse");
+	$('.nav-link').on("click", () => {
+	   console.log('hi')
+	   navMain.collapse('hide');
+	});
+}
 
 function smoothScroll(){
 	$('a[href*="#"]:not([href="#"])').on('click', function(e)
@@ -27,10 +35,10 @@ function smoothScroll(){
 
 function highlight(){
 	if($('#summaryNav').hasClass('active')){
-		$('#navHeader').addClass('highlight')
+		$('#navHeader').addClass('highlight');
 	}
 	else{
-		$('#navHeader').removeClass('highlight')
+		$('#navHeader').removeClass('highlight');
 	}
 }
 
@@ -38,6 +46,7 @@ $(() => {
 	stickyNav()
 	smoothScroll()
 	highlight()
+	navBarHide()
 	$(window).scroll(() => {
 		stickyNav()
 		highlight()
